@@ -1,0 +1,29 @@
+@use "../functionSASS/function.scss" as *;
+
+.editor__wrapper {
+  //
+  .editor__header {
+    background-color: hsl(var(--color-900));
+    display: flex;
+    align-content: center;
+    color: hsl(var(--color-500));
+
+    > * {
+      flex: 1 1 0px;
+      font-family: var(--font-primary);
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 2px;
+      color: var(--color-500);
+      padding: 12px;
+      text-transform: uppercase;
+    }
+
+    .editor__header--Left {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

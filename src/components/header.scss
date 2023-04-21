@@ -1,0 +1,115 @@
+@use "../functionSASS/function.scss" as *;
+
+.header {
+  background-color: hsl(var(--color-800));
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: min-content;
+
+  //   >div:not(.burger){
+  //     margin-block: 1rem;
+  //     background-color: red;
+  //   }
+
+  .burger {
+    height: 100%;
+    aspect-ratio: 1;
+    padding: 1.3rem 1.3rem;
+    display: flex;
+    align-items: center;
+    background-color: hsl(var(--color-700));
+
+    .burger__btn {
+      width: rem(30);
+      padding: 0;
+      cursor: pointer;
+
+      &::after,
+      &::before,
+      div {
+        content: "";
+        background: hsl(var(--color-100));
+        display: block;
+        height: rem(2);
+        margin: rem(5) 0;
+        transition: 0.5s;
+      }
+    }
+  }
+
+  .logo {
+    padding-block: 1em;
+    padding-right: 1em;
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: rem(3);
+    border-right: rem(1) solid hsl(var(--color-600));
+  }
+
+  .document__info {
+    // padding-block: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .document__name {
+      display: flex;
+      flex-direction: column;
+
+      > label {
+        color: hsl(var(--color-500));
+      }
+
+      > input {
+        background-color: transparent;
+        border: none;
+        color: hsl(var(--color-100));
+        border-bottom: rem(1) solid transparent;
+
+        &:focus {
+          outline: none;
+          border-bottom-color: hsl(var(--color-100));
+        }
+      }
+    }
+  }
+
+  .header__buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .delete-btn {
+      background-color: transparent;
+      aspect-ratio: 1 /1;
+      width: 2.7rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: hsl(var(--color-900));
+      }
+    }
+
+    .save-btn {
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: rem(8);
+      font-weight: 500;
+      background-color: hsl(var(--accent));
+      color: hsl(var(--color-100));
+      border-radius: rem(4);
+
+      min-width: max-content;
+
+      &:hover {
+        background-color: hsl(var(--accent-light));
+      }
+    }
+  }
+}
