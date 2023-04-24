@@ -5,11 +5,18 @@ import iconDoc from "../assets/icon-document.svg";
 import iconDelete from "../assets/icon-delete.svg";
 import iconCheck from "../assets/icon-check.svg";
 import iconSave from "../assets/icon-save.svg";
+import { useGlobalData } from "./AppContext/AppContext";
 function header() {
+
+  const { setToggle } = useGlobalData();
+
   return (
     <header className="header">
       <div className="burger">
-        <button className="burger__btn">
+        <button
+          className="burger__btn"
+          onClick={() => setToggle((prev) => !prev)}
+        >
           <div className="burger-dash"></div>
         </button>
       </div>

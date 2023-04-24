@@ -5,6 +5,7 @@ import Showdown from "showdown";
 
 import iconShowPreview from "../assets/icon-show-preview.svg";
 import iconHidePreview from "../assets/icon-hide-preview.svg";
+import { useGlobalData } from "./AppContext/AppContext";
 
 const converter = new Showdown.Converter({
   tables: true,
@@ -14,6 +15,8 @@ const converter = new Showdown.Converter({
 });
 
 function Editor() {
+  const { displayMarkdown, handleChanges } = useGlobalData();
+
   return (
     <div className="editor__wrapper">
       <div className="editor__header">
@@ -28,11 +31,11 @@ function Editor() {
           </button>
         </div>
       </div>
-      <div className={"react-mde-wrapper "}>
+      <div className={"react-mde-wrapper"}>
         <ReactMde
-          value={"#ad"}
+          value={displayMarkdown[0]?.content}
           loadingPreview={<div>Loading...</div>}
-          // onChange={handleChanges}
+          onChange={handleChanges}
           selectedTab={"preview"}
           // onTabChange={setSelectedTab}
           toolbarCommands={[["bold", "italic"]]}

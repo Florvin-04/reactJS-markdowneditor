@@ -2,6 +2,8 @@
 
 .editor__wrapper {
   //
+ 
+
   .editor__header {
     background-color: hsl(var(--color-900));
     display: flex;
@@ -24,6 +26,36 @@
     .editor__header--Left {
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  .react-mde {
+    //
+    background-color: hsl(var(--color-1000));
+    color: hsl(var(--color-100));
+    display: flex;
+
+    > * {
+      flex: 1 1 0;
+
+      // outline: 1px solid red;
+    }
+    .mde-header {
+      display: none;
+    }
+
+    .mde-text {
+      min-height: 100vh;
+      width: 100%;
+      background-color: hsl(var(--color-1000));
+      border: none;
+      border-right: rem(1) solid hsl(var(--color-500));
+      color: hsl(var(--color-100));
+      resize: none;
+
+      &:focus {
+        outline: rem(1) solid red;
+      }
     }
   }
 }

@@ -3,9 +3,18 @@
   // margin: 0 auto;
   // padding: 2rem;
   // text-align: center;
+  min-height: inherit;
 }
 
 .App {
   font-family: var(--font-100);
   overflow: hidden;
+  min-height: inherit;
+  display: flex;
+
+  main {
+    // background-color: red;
+    min-height: inherit;
+    width: 100vw;
+  }
 }
