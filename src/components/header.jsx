@@ -7,9 +7,16 @@ import iconCheck from "../assets/icon-check.svg";
 import iconSave from "../assets/icon-save.svg";
 import { useGlobalData } from "./AppContext/AppContext";
 function header() {
+  const { setToggle, displayMarkdown, handleChangeName, markdown, setSaveDocs } = useGlobalData();
 
-  const { setToggle } = useGlobalData();
+  function saveData() {
+    setSaveDocs(true);
+    localStorage.setItem("allDocs", JSON.stringify(markdown));
 
+    setTimeout(() => {
+      setSaveDocs(false);
+    }, 1000);
+  }
   return (
     <header className="header">
       <div className="burger">
@@ -35,7 +42,10 @@ function header() {
           <input
             type="text"
             id="docName"
+            name="name"
             className="docName"
+            value={displayMarkdown[0]?.name}
+            onChange={handleChangeName}
           />
         </span>
       </div>
@@ -47,7 +57,10 @@ function header() {
             alt="delete button"
           />
         </button>
-        <button className="save-btn">
+        <button
+          className="save-btn"
+          onClick={saveData}
+        >
           <img
             src={iconSave}
             alt=""

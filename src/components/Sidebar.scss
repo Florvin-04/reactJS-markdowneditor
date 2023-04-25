@@ -43,6 +43,7 @@
     width: 100%;
 
     &--item {
+      margin-top: 1rem;
       width: 100%;
       padding: 1em 0.8em 1em 1em;
       display: flex;
@@ -51,6 +52,8 @@
       background-color: hsl(var(--color-700));
       border-radius: rem(3);
       cursor: pointer;
+      overflow: hidden;
+      max-width: 18rem;
 
       button img {
         width: 1em;
